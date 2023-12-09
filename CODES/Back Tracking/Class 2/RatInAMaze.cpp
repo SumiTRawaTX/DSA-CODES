@@ -56,7 +56,7 @@ int main() {
 
   int maze[3][3] = { {1,0,0},
                  {1,1,0},
-                 {1,1,0}};
+                 {1,1,1}};
     
     if(maze[0][0] == 0) {
         cout << "No path exist" << endl;
