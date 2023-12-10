@@ -85,6 +85,8 @@ int main () {
     // 0-> empty cell
     // 1-> queen at the cell
     solve(board, col, n);
-    return 0;
+    return 0; 
+    // updated
+    
 
 }
