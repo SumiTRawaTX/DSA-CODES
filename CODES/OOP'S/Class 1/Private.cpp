@@ -22,4 +22,5 @@ int main() {
     Ramesh.setWeight(101);
     cout << "Weight: " << Ramesh.getWeight() << endl;
     return 0;
+    
 }
