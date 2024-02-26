@@ -12,13 +12,11 @@ int main() {
     Animal suresh;
 
     // Declaring a pointer to an object of the Animal class
-    Animal* suresh = new Animal;
+    Animal* sureshPointer = new Animal;
 
     // Setting values using pointer notation
-    suresh->age = 12;
-    suresh->name = "sumit";
-
-
+    sureshPointer->age = 12;
+    sureshPointer->name = "sumit";
 
     return 0;
 }
