@@ -1,6 +1,0 @@
-4 Main pillars in OOP"s : 
-
-1. Encapuslation
-2. Abstraction
-3. Polymorphism
-4. Inheritence
