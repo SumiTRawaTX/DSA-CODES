@@ -29,4 +29,5 @@ int main() {
     Node *third = new Node(40);
     Node *fourth = new Node(60);
     Node *fifth = new Node(70);
+    
 }
