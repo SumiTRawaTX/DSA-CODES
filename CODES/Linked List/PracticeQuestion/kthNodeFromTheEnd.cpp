@@ -10,7 +10,7 @@ void fun(ListNode* head, int& position, int & ans) {
     position --;
 }
 
-int getNode(ListNode* list, int position) {
+int getNode(ListNode* list, int position) { 
     int ans = -1;
     fun(list, position, ans);
     return ans;
