@@ -1,0 +1,4 @@
+Queue - data Structure - follow fifo rule(first in first out)
+
+insertion always from end side
+removal always done from front side
