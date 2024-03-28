@@ -22,6 +22,20 @@ void reverse(queue<int> &q) {
 }
 
 
+void reverseQueueRecursion(queue<int> & q) {
+    // base case
+    if(q.empty()) return;
+
+    // step 1- 
+    int temp = q.front();
+    q.pop();
+
+    // step 2-
+    reverseQueueRecursion(q);
+
+    // step 3-
+    q.push(temp);
+}
 int main() {
     queue<int> q;
 
@@ -34,6 +48,14 @@ int main() {
     reverse(q);
 
     cout << "printing Queue" << endl;
+    while(!q.empty()) {
+        cout << q.front() << " ";
+        q.pop();
+    }
+    cout << endl;
+
+    reverseQueueRecursion(q);
+    cout << "printing Queue using Recursion" << endl;
     while(!q.empty()) {
         cout << q.front() << " ";
         q.pop();
