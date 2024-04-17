@@ -15,7 +15,7 @@ void heapify(int arr[], int n, int i) {
     }
 
     if(index != largest) {
-        // left ya right chikd me se koi greater hogya currNode se
+        // left ya right child me se koi greater hogya currNode se
         swap(arr[index], arr[largest]);
         index = largest;
         heapify(arr, n, largest);
@@ -23,14 +23,15 @@ void heapify(int arr[], int n, int i) {
 }
 
 void buildHeap(int arr[], int n) {
-    for(int i = n/2; i>0; i++) {
+    for(int i = n/2; i > 0; i--) {
         heapify(arr, n, i);
     }
 }
 
 int main() {
-    int arr[] = {-1, 12, 15, 13, 11, 14};
-    int n = 5;
+    int arr[] = {12, 56, 43, 6, 78, 87, 5, 44, 3, 23, 32};
+
+    int n = 11;
     buildHeap(arr, n);
 
     cout << "printing the heap" << endl;
