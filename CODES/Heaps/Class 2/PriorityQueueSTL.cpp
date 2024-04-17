@@ -25,7 +25,7 @@ int main() {
         cout << "Max heap is empty" << endl;
     }
     else {
-        cout << "Max heap is not empty" << endl;
+        cout << "Max heap is not empty" << endl; 
     }
 
 
