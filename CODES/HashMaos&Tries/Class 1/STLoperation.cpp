@@ -46,6 +46,6 @@ int main() {
     cout << "printing all entries: " << endl;
 
     for(auto i: m) {
-        cout << i.first << " ->" << i.second << endl;
+        cout << i.first << " -> " << i.second << endl;
     }
 }
