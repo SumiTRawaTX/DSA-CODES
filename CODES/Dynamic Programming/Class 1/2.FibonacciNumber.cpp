@@ -12,7 +12,7 @@ public:
     // Bottom UP Approach - Tabulation
     int BottomUpSolve(int n) {
         // step 1- create dp array
-        vector<int> dp(n+1, -1);
+        vector<int> dp(n+1, -1);    
         // step 2- observe base case in above solution
         dp[0] = 0;
         if(n == 0) return dp[0];
