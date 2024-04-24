@@ -9,7 +9,7 @@ public:
         int ans = recSolve(n-1) + recSolve(n-2);
         return ans;
     }
-
+    // Bottom UP Approach - Tabulation
     int BottomUpSolve(int n) {
         // step 1- create dp array
         vector<int> dp(n+1, -1);
@@ -23,7 +23,7 @@ public:
         }
         return dp[n];
     }
-    
+
     int fib(int n) {
         return BottomUpSolve(n);
     }
