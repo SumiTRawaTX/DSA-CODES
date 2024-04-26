@@ -14,7 +14,6 @@ public:
     //     return (include || exclude);
     // }
 
-    // dp - top down approach - recursion + memoization
     //    bool solveUsingMem(int index, vector<int>& nums, int target, vector<vector<int>>& dp) {
     //     // base case
     //     int n = nums.size();
@@ -29,9 +28,6 @@ public:
     //     dp[index][target] = (include || exclude);
     //     return dp[index][target];
     // }
-
-
-    // dp- bottom up approach - tabulation
 
     // bool solveUsingTabulation(vector<int>& nums, int target) {
     //     int n = nums.size();
@@ -54,7 +50,29 @@ public:
     //     return dp[0][target];
     // }
 
+    bool solveUsingTabulationSO(vector<int>& nums, int target) {
+        int n = nums.size();
 
+        vector<int> curr(target + 1, 0);
+        vector<int> next(target + 1, 0);
+
+        curr[0] = 1;
+        next[0] = 1;
+
+        for(int index = n-1; index >= 0; index--) {
+            for(int t = 1; t<= target; t++) {
+                bool include = 0;
+                if(t - nums[index] >= 0) {
+                    include = next[t-nums[index]];
+                }
+                bool exclude = next[t];
+
+                curr[t] = (include || exclude);
+            }
+            next = curr;
+        }
+        return next[target];
+    }
     bool canPartition(vector<int>& nums) {
         int sum = 0;
         for(int i = 0; i < nums.size(); i++) {
@@ -69,7 +87,9 @@ public:
         // vector<vector<int>> dp(nums.size(), vector<int>(target+1, -1));
         // bool ans = solveUsingMem(index, nums, target, dp);
 
-        bool ans = solveUsingTabulation(nums, target);
+        // bool ans = solveUsingTabulation(nums, target);
+
+        bool ans = solveUsingTabulationSO(nums, target);
         return ans;
     }
 };
