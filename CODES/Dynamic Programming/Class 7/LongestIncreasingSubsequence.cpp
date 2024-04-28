@@ -54,6 +54,26 @@ public:
         return dp[0][0];
     }
 
+    int solveOptimal(vector<int>& arr) {
+        if(arr.size() == 0) return 0;
+        vector<int> ans;
+        ans.push_back(arr[0]);
+
+        for(int i = 1; i < arr.size(); i++) {
+            if(arr[i] > arr.back()) {
+                // include
+                ans.push_back(arr[i]);
+            }
+            else {
+                // overwrite
+                // find index of just big element
+                int index = lower_bound(ans.begin(), ans.end(), arr[i]) - ans.begin();
+                ans[index] = arr[i];
+            }
+        }
+        return ans.size();
+    }
+
     int solveUsingSO(vector<int>& arr) {
         int n = arr.size();
 
@@ -85,7 +105,9 @@ public:
         vector<vector<int>> dp(n, vector<int>(n + 1, -1));
         // int ans = solveUsingMem(nums, curr, prev, dp);
         // int ans = solveUsingTab(nums);
-        int ans = solveUsingSO(nums);
+        // int ans = solveUsingSO(nums);
+
+        int ans = solveOptimal(nums);
         return ans;
     }
 
