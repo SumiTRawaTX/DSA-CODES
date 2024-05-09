@@ -1,4 +1,3 @@
-// https://leetcode.com/problems/course-schedule/description/
 
 class Solution {
 private: 
